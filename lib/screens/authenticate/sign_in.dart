@@ -29,7 +29,6 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
-        title: Text('Sign in to Brew Crew'),
         actions: [
           TextButton.icon(
               onPressed: () {
@@ -53,6 +52,13 @@ class _SignInState extends State<SignIn> {
           key: _formKey,
           child: Column(
             children: [
+              Text(
+                "Sign in",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                )
+              ),
               SizedBox(
                 height: 20.0,
               ),

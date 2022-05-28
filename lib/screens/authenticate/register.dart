@@ -29,7 +29,6 @@ class _RegisterState extends State<Register> {
             appBar: AppBar(
               backgroundColor: Colors.brown[400],
               elevation: 0.0,
-              title: Text('Sign up to Brew Crew'),
               actions: [
                 TextButton.icon(
                     onPressed: () {
@@ -53,8 +52,15 @@ class _RegisterState extends State<Register> {
                 key: _formKey,
                 child: Column(
                   children: [
+                    Text(
+                      "Sign in",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                      fontSize: 30,
+                )
+              ),
                     SizedBox(
-                      height: 20.0,
+                      height: 223
                     ),
                     TextFormField(
                       style: TextStyle(
