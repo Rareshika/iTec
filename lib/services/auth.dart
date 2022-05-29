@@ -2,6 +2,20 @@ import 'package:itec/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:itec/models/user.dart';
 
+List<String> badgeNames = [
+  'global_health',
+  'polio',
+  'maternal_mortality',
+  'child_mortaliy',
+  'malaria',
+  'suicide',
+  'burden_of_diseases',
+  'eradication_of_diseases',
+  'cause_of_death',
+  'financing_healthcare',
+  'smoking'
+];
+
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -46,10 +60,16 @@ class AuthService {
           email: email, password: password);
       User? user = credential.user;
 
+      Map<String, dynamic> mapa = {};
+      for (String badgeName in badgeNames) {
+        mapa[badgeName] = false;
+      }
+
+      await DatabaseService(uid: user!.uid).updateUserData(mapa);
       // Create a new document for the user with the uid
       // await DatabaseService(uid: user!.uid).updateUserData('0', 'John Doe', 100);
       print('TEEEEST');
-      print(user!.uid);
+      print(user.uid);
       return _customUserFromFirebaseUser(user);
     } catch (e) {
       print(e.toString());
