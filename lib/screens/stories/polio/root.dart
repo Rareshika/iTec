@@ -12,7 +12,7 @@ List<Choice> choices = [
       definition: "",
       img: "",
       endMessage: "",
-      nextWidget: GH1()),
+      nextWidget: PO1()),
   Choice(
       title: "Is fitness really worth it?",
       description:
@@ -31,9 +31,9 @@ List<Choice> choices = [
       nextWidget: GH3())
 ];
 
-class GH extends StatelessWidget {
+class PO extends StatelessWidget {
   final Choice currChoice;
-  GH({required this.currChoice});
+  PO({required this.currChoice});
   @override
   Widget build(BuildContext context) {
     return ChoicePage(
@@ -41,8 +41,8 @@ class GH extends StatelessWidget {
   }
 }
 
-class GH1 extends StatelessWidget {
-  GH1({Key? key}) : super(key: key);
+class PO1 extends StatelessWidget {
+  PO1({Key? key}) : super(key: key);
 
   List<Choice> newChoices = [
     Choice(
