@@ -25,9 +25,9 @@ class _RegisterState extends State<Register> {
     return loading
         ? Loading()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
+            backgroundColor: Color.fromARGB(255, 188, 215, 190),
             appBar: AppBar(
-              backgroundColor: Colors.brown[400],
+              backgroundColor: Colors.green,
               elevation: 0.0,
               title: Text('Sign up to Brew Crew'),
               actions: [
@@ -119,7 +119,7 @@ class _RegisterState extends State<Register> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.brown[500],
+                        primary: Color.fromARGB(255, 127, 211, 130),
                         padding: EdgeInsets.symmetric(
                             vertical: 20.0, horizontal: 25),
                       ),

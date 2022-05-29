@@ -25,9 +25,9 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
-      backgroundColor: Colors.brown[100],
+      backgroundColor: Color.fromARGB(255, 188, 215, 190),
       appBar: AppBar(
-        backgroundColor: Colors.brown[400],
+        backgroundColor: Colors.green,
         elevation: 0.0,
         title: Text('Sign in to Brew Crew'),
         actions: [
@@ -113,7 +113,7 @@ class _SignInState extends State<SignIn> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.brown[500],
+                  primary: Color.fromARGB(255, 127, 211, 130),
                   padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 25),
                 ),
               ),

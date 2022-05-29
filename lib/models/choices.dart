@@ -24,22 +24,29 @@ class ChoiceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Color.fromARGB(255, 130, 233, 137),
       clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
           ListTile(
-            title: Center(child: Text('${choice.title}')),
+            title: Center(
+                child: Text(
+              '${choice.title}',
+              style: TextStyle(fontSize: 21.0),
+            )),
             subtitle: Center(
               child: Text(
                 '${choice.definition}',
-                style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                style: TextStyle(
+                    color: Colors.black.withOpacity(0.8), fontSize: 16.0),
               ),
             ),
           ),
           Center(
             child: Text(
               '${choice.description}',
-              style: TextStyle(color: Colors.black.withOpacity(0.5)),
+              style: TextStyle(
+                  color: Colors.black.withOpacity(0.7), fontSize: 15.0),
             ),
           ),
           ButtonBar(
@@ -47,8 +54,8 @@ class ChoiceCard extends StatelessWidget {
             children: [
               TextButton(
                 style: TextButton.styleFrom(
-                  primary: Colors.green,
-                ),
+                    primary: Colors.white,
+                    backgroundColor: Color.fromARGB(255, 16, 164, 50)),
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -72,22 +79,33 @@ class CardsList extends StatelessWidget {
   CardsList({required this.currChoice, required this.choices});
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: choices.length + 3,
-      itemBuilder: (BuildContext context, int index) {
-        if (index == 0) {
-          return CircleAvatar(
-            backgroundColor: Colors.red,
-          );
-        }
-        if (index == 1) {
-          return Center(child: Text('${currChoice.description}:'));
-        }
-        if (index == 2) {
-          return Center(child: Text('Pick a scenario:'));
-        }
-        return ChoiceCard(choice: choices[index - 3]);
-      },
+    return Padding(
+      padding: const EdgeInsets.only(top: 65),
+      child: ListView.builder(
+        itemCount: choices.length + 3,
+        itemBuilder: (BuildContext context, int index) {
+          if (index == 0) {
+            return Center(
+                child: Text(
+              '${currChoice.description}:',
+              style: TextStyle(fontSize: 17.0),
+            ));
+          }
+          if (index == 1) {
+            return Center(
+                child: Text(
+              'Pick a scenario:',
+              style: TextStyle(fontSize: 16.0),
+            ));
+          }
+          if (index == 2) {
+            return SizedBox(
+              height: 50,
+            );
+          }
+          return ChoiceCard(choice: choices[index - 3]);
+        },
+      ),
     );
   }
 }
@@ -105,19 +123,30 @@ class EndPage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(endMessage),
+            Text(
+              endMessage,
+              style: TextStyle(fontSize: 16.0),
+            ),
           ],
+        ),
+        SizedBox(
+          height: 50,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton.icon(
               icon: isGood ? Icon(Icons.check) : Icon(Icons.restart_alt),
+              style: ElevatedButton.styleFrom(
+                primary: Color.fromARGB(255, 54, 196, 58),
+              ),
               onPressed: () {
                 Navigator.pop(context);
               },
               label: isGood
-                  ? Text("Nice, let's try something new!")
+                  ? Text(
+                      "Nice, let's try something new!",
+                    )
                   : Text("Well, this isn't the right choice, try again?"),
             ),
           ],
@@ -141,10 +170,11 @@ class ChoicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 188, 215, 190),
       appBar: AppBar(
-        title: Text('${currChoice.title}'),
-        centerTitle: true,
-      ),
+          title: Text('${currChoice.title}'),
+          centerTitle: true,
+          backgroundColor: Color.fromARGB(255, 54, 196, 58)),
       body: isEnd
           ? EndPage(
               isGood: isGood,

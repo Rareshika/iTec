@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:itec/models/choices.dart';
 import 'package:itec/models/story.dart';
+import 'package:itec/screens/stories/burned_of_diseases/root.dart';
+import 'package:itec/screens/stories/causes_of_death/root.dart';
+import 'package:itec/screens/stories/erad_of_diseases/root.dart';
 import 'package:itec/screens/stories/global_health/root.dart';
 import 'package:itec/screens/stories/life_expectancy/root.dart';
+import 'package:itec/screens/stories/malaria/root.dart';
 import 'package:itec/screens/stories/maternal_mortality/root.dart';
 import 'package:itec/screens/stories/polio/root.dart';
+import 'package:itec/screens/stories/smoking/root.dart';
+import 'package:itec/screens/stories/suic/root.dart';
 import 'package:itec/shared/empty.dart';
 
 List<String> badgeNames = [
@@ -138,8 +144,7 @@ List<Choice> choices = [
       )),
   Choice(
       title: 'Burden of diseases',
-      definition:
-          'The spreading and carrying of diseases',
+      definition: 'The spreading and carrying of diseases',
       description:
           'Bjorn is a 25 year old man. He likes to go out a lot with friends and party.',
       img: "",
@@ -147,8 +152,7 @@ List<Choice> choices = [
       nextWidget: BD(
         currChoice: Choice(
             title: 'Global Health',
-            definition:
-                'The spreading and carrying of diseases',
+            definition: 'The spreading and carrying of diseases',
             description:
                 'Bjorn is a 25 year old man. He likes to go out a lot with friends and party',
             img: "",
@@ -157,8 +161,7 @@ List<Choice> choices = [
       )),
   Choice(
       title: 'Eradication of diseases',
-      definition:
-          'To reduce the number  of diseases and infections to zero.',
+      definition: 'To reduce the number  of diseases and infections to zero.',
       description:
           'Muhammed was thinking about the problems that diseases cause every year and now he wants to help other people by finding out ways to prevent diseases',
       img: "",
@@ -176,8 +179,7 @@ List<Choice> choices = [
       )),
   Choice(
       title: 'Causes of death',
-      definition:
-          'People unfortunately can die from a lot of factors.',
+      definition: 'People unfortunately can die from a lot of factors.',
       description:
           'Lin has been started realizing that everyone dies and wants to live as long as he can while still living a happy life',
       img: "",
@@ -185,8 +187,7 @@ List<Choice> choices = [
       nextWidget: CD(
         currChoice: Choice(
             title: 'Causes of death',
-            definition:
-                'People unfortunately can die from a lot of factors.',
+            definition: 'People unfortunately can die from a lot of factors.',
             description:
                 'Lin has been started realizing that everyone dies and wants to live as long as he can while still living a happy life',
             img: "",
@@ -216,8 +217,7 @@ List<Choice> choices = [
       title: 'Smoking',
       definition:
           'Consuming burnt nicotine products that can lead to health issues.',
-      description:
-          'Kojo has a smoking addiction and tries to get rid of it',
+      description: 'Kojo has a smoking addiction and tries to get rid of it',
       img: "",
       endMessage: "",
       nextWidget: SM(
@@ -244,14 +244,15 @@ class _StorySelectState extends State<StorySelect> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 188, 215, 190),
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text('Lessons'),
-          ],
-        ),
-      ),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text('Lessons'),
+            ],
+          ),
+          backgroundColor: Colors.green),
       body: ListView.builder(
         itemCount: choices.length,
         itemBuilder: (BuildContext context, int index) {

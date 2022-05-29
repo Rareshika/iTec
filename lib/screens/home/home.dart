@@ -30,39 +30,59 @@ class _HomeState extends State<Home> {
     final user = Provider.of<CustomUser?>(context);
 
     return Scaffold(
-      backgroundColor: Colors.brown[50],
+      backgroundColor: Color.fromARGB(255, 188, 215, 190),
       appBar: AppBar(
         title: Text('Brew Crew'),
-        backgroundColor: Colors.brown[400],
+        backgroundColor: Colors.green,
         elevation: 0.0,
         actions: [
           TextButton.icon(
             onPressed: () async {
               await _auth.signOut();
             },
-            icon: Icon(Icons.person),
-            label: Text('logout'),
+            icon: Icon(Icons.person, color: Colors.white),
+            label: Text(
+              'logout',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
-          TextButton.icon(
-              onPressed: () async {},
-              icon: Icon(Icons.settings),
-              label: Text('settings')),
         ],
       ),
       body: Center(
         child: TextButton(
           onPressed: () {},
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(Icons.book),
-              TextButton(
-                child: Text('Wanna learn something new?'),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const StorySelect()));
-                },
+              Padding(
+                padding: const EdgeInsets.only(top: 80.0),
+                child: Icon(
+                  Icons.book,
+                  color: Color.fromARGB(255, 54, 196, 58),
+                  size: 50,
+                ),
+              ),
+
+              //Text("Welcome back"),
+              Padding(
+                padding: const EdgeInsets.only(top: 80),
+                child: SizedBox(
+                  height: 75,
+                  width: 300,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Color.fromARGB(255, 54, 196, 58),
+                    ),
+                    child: Text('Wanna learn something new?'),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const StorySelect()));
+                    },
+                  ),
+                ),
               ),
             ],
           ),
