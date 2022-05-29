@@ -2,6 +2,7 @@ import 'package:itec/models/user.dart';
 import 'package:itec/screens/authenticate/authenticate.dart';
 import 'package:itec/screens/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:itec/screens/home/profile.dart';
 import 'package:provider/provider.dart';
 
 class Wrapper extends StatelessWidget {
