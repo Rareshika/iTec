@@ -99,7 +99,7 @@ class GH2 extends StatelessWidget {
         description: 'It does sound pretty cool',
         img: "",
         endMessage: "",
-        nextWidget: GH31(
+        nextWidget: GH21(
             currChoice: Choice(
                 title: 'The Gym',
                 description: 'It does sound pretty cool',
@@ -114,7 +114,7 @@ class GH2 extends StatelessWidget {
         description: "I am healthy enough...",
         img: "",
         endMessage: "",
-        nextWidget: GH32(
+        nextWidget: GH22(
             currChoice: Choice(
                 title: 'No need to lift',
                 description: "I am healthy enough...",

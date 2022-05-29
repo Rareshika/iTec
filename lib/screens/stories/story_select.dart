@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:itec/models/choices.dart';
 import 'package:itec/models/story.dart';
 import 'package:itec/screens/stories/global_health/root.dart';
+import 'package:itec/screens/stories/life_expectancy/root.dart';
+import 'package:itec/screens/stories/maternal_mortality/root.dart';
+import 'package:itec/screens/stories/polio/root.dart';
 import 'package:itec/shared/empty.dart';
 
 List<String> badgeNames = [
@@ -38,22 +41,63 @@ List<Choice> choices = [
             nextWidget: Empty(),
             endMessage: ""),
       )),
-  // Story(
-  //     title: 'Polio',
-  //     definition:
-  //         'Polio is a deadly disease which spreads easily in less developed areas.',
-  //     description: 'Aamina is a young african girl who went on a hike.'),
-  // Story(
-  //     title: 'Life Expectancy',
-  //     definition: 'How much will people live on average',
-  //     description:
-  //         'Barry is an 18 year old young man, with some of his most important exams coming up.'),
-  // Story(
-  //   title: 'Maternal Mortality',
-  //   definition: 'Mothers who die upon giving birth',
-  //   description:
-  //       "Nala is a young mother giving birth to her first child. She still doesn't really know how this works.",
-  // ),
+  Choice(
+    title: 'Polio',
+    definition:
+        'Polio is a deadly disease which spreads easily in less developed areas.',
+    description: 'Aamina is a young african girl who went on a hike',
+    img: "",
+    endMessage: "",
+    nextWidget: PO(
+      currChoice: Choice(
+        title: 'Polio',
+        definition:
+            'Polio is a deadly disease which spreads easily in less developed areas.',
+        description: 'Aamina is a young african girl who went on a hike',
+        img: "",
+        endMessage: "",
+        nextWidget: Empty(),
+      ),
+    ),
+  ),
+  Choice(
+    title: 'Life Expectancy',
+    definition: 'How much do people live on average',
+    description:
+        'Barry is an 18 year old young man, with some of his most important exams coming up.',
+    img: "",
+    endMessage: "",
+    nextWidget: LE(
+      currChoice: Choice(
+        title: 'Life Expectancy',
+        definition: 'How much do people live on average',
+        description:
+            'Barry is an 18 year old young man, with some of his most important exams coming up.',
+        img: "",
+        endMessage: "",
+        nextWidget: Empty(),
+      ),
+    ),
+  ),
+  Choice(
+    title: 'Maternal Mortality',
+    definition: 'Mothers who die upon giving birth',
+    description:
+        "Nala is a young mother giving birth to her first child. She still doesn't really know how this works.",
+    img: "",
+    endMessage: "",
+    nextWidget: MM(
+      currChoice: Choice(
+        title: 'Maternal Mortality',
+        definition: 'Mothers who die upon giving birth',
+        description:
+            "Nala is a young mother giving birth to her first child. She still doesn't really know how this works.",
+        img: "",
+        endMessage: "",
+        nextWidget: Empty(),
+      ),
+    ),
+  ),
   // Story(
   //   title: 'Child Mortality',
   //   definition:

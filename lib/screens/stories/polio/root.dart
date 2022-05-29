@@ -6,29 +6,29 @@ import 'package:itec/shared/empty.dart';
 List<bool> shouldPop = [false, false, false];
 List<Choice> choices = [
   Choice(
-      title: "Burger VS Salad",
+      title: "A nice bath in a not so nice lake",
       description:
-          "John has been gaining some weight recently. He's been thinking about what to eat at dinner today. What do you think he should do?",
+          " It was very hot and Aamina felt the urge to cool off. There was a lake nearby, which was quite dirty. Still, she is not sure whether she should do it, what do you suggest?",
       definition: "",
       img: "",
       endMessage: "",
       nextWidget: PO1()),
   Choice(
-      title: "Is fitness really worth it?",
+      title: "It's still edible, right?",
       description:
-          "John’s friends started going to the gym recently and invited him to join them. He starts questioning if it is really worth it.",
+          "While on her trip, she got hungry. Aamina tried to take one of her sandwiches out. But, unfortunatelly it fell on the ground. The sandwich is stiil good, isn't it? What is your opinion?",
       definition: "",
       img: "",
       endMessage: "",
-      nextWidget: GH2()),
+      nextWidget: PO2()),
   Choice(
-      title: "Am I wasting my time?",
+      title: "It's only water after all...",
       description:
-          "John started high school recently. His colleagues try to befriend him, but fail. He thinks about having a conversation with them.",
+          "fter the long hike, she got home pretty tired. Washing your hands takes 30 seconds, which is way tooo much for Aamina at that time. Yet she still had some remorse, what shall she do?",
       definition: "",
       img: "",
       endMessage: "",
-      nextWidget: GH3())
+      nextWidget: PO3())
 ];
 
 class PO extends StatelessWidget {
@@ -46,33 +46,35 @@ class PO1 extends StatelessWidget {
 
   List<Choice> newChoices = [
     Choice(
-        title: 'Burger',
-        description: 'The burger looks, pretty good, right?',
+        title: "Let's go for a swim",
+        description: "The water is quite dirty, but at least it's cool",
         img: "",
         endMessage: "",
-        nextWidget: GH11(
+        nextWidget: PO11(
             currChoice: Choice(
-                title: 'Burger',
-                description: 'The burger looks, pretty good, right?',
+                title: "Let's go for a swim",
+                description: "The water is quite dirty, but at least it's cool",
                 img: "",
                 definition: "",
                 endMessage:
-                    "Well…He ate the burger, at first it was delicious, but he kept his bad eating habits and ended up getting fatter.",
+                    "She decided to take a bath in the lake, it turns out the lake was infected with polio. Unfortunately she got the very deadly disease.",
                 nextWidget: Empty())),
         definition: ""),
     Choice(
-        title: 'Salad',
-        description: "The salad doesn't look as good",
+        title: 'A bit too green for me',
+        description:
+            "The water was filthy. There were no fishies swimming around either",
         img: "",
         endMessage: "",
-        nextWidget: GH12(
+        nextWidget: PO12(
             currChoice: Choice(
-                title: 'Salad',
-                description: "The salad doesn't look as good",
+                title: 'A bit too green for me',
+                description:
+                    "The water was filthy. There were no fishies swimming around either",
                 img: "",
                 definition: "",
                 endMessage:
-                    "Well… The salad wasn't nearly as good, but in time, with determination, his good eating habits led to his weight loss, increasing his self-confidence and body image.",
+                    "She decided not to take a bath in the lake, even though it was hot, she was able to continue her hike safely.",
                 nextWidget: Empty())),
         definition: ""),
   ];
@@ -90,38 +92,38 @@ class PO1 extends StatelessWidget {
   }
 }
 
-class GH2 extends StatelessWidget {
-  GH2({Key? key}) : super(key: key);
+class PO2 extends StatelessWidget {
+  PO2({Key? key}) : super(key: key);
 
   List<Choice> newChoices = [
     Choice(
-        title: 'The Gym',
-        description: 'It does sound pretty cool',
+        title: 'A Sandwich is enough',
+        description: 'I am hungry, but the bacteria are hungrier',
         img: "",
         endMessage: "",
-        nextWidget: GH31(
+        nextWidget: PO21(
             currChoice: Choice(
-                title: 'The Gym',
-                description: 'It does sound pretty cool',
+                title: 'A Sandwich is enough',
+                description: 'I am hungry, but the bacteria are hungrier',
                 img: "",
                 definition: "",
                 endMessage:
-                    "So…John decided to go to the gym. Even though it was a rough start he got used to it and kept persevering, ending up with a rocking body.",
+                    "She realized that she had two sandwiches on her after all, even though she was hungry, she fought the temptation and continued her journey.",
                 nextWidget: Empty())),
         definition: ""),
     Choice(
-        title: 'No need to lift',
-        description: "I am healthy enough...",
+        title: 'Sandwiches are tasty',
+        description: "I can't waste this good food!",
         img: "",
         endMessage: "",
-        nextWidget: GH32(
+        nextWidget: PO22(
             currChoice: Choice(
-                title: 'No need to lift',
-                description: "I am healthy enough...",
+                title: 'Sandwiches are tasty',
+                description: "I can't waste this good food!",
                 img: "",
                 definition: "",
                 endMessage:
-                    "So…John decided to not go to the gym with his friends and exercise, thus becoming less confident as time went on.",
+                    "She realized that just one sandwich wasn't going to cut it so she picked it up from the ground. Sadly, Polio was waiting for her to take the bait…",
                 nextWidget: Empty())),
         definition: ""),
   ];
@@ -136,38 +138,37 @@ class GH2 extends StatelessWidget {
   }
 }
 
-class GH3 extends StatelessWidget {
-  GH3({Key? key}) : super(key: key);
+class PO3 extends StatelessWidget {
+  PO3({Key? key}) : super(key: key);
 
   List<Choice> newChoices = [
     Choice(
-        title: 'Friends??',
-        description: 'They might be good for something',
+        title: "Washing hands takes too long...",
+        description: "There's no way a little water could kill bacteria, right?",
         img: "",
         endMessage: "",
-        nextWidget: GH31(
+        nextWidget: PO31(
             currChoice: Choice(
-                title: 'Friends??',
-                description: 'They might be good for something',
+                title: "Washing hands takes too long...",
+                description: "There's no way a little water could kill bacteria, right?",
                 img: "",
                 definition: "",
-                endMessage:
-                    "So…John started talking with them, becoming friends, ending up happier than ever before.",
+                endMessage: "Those 30 seconds were much, but not thaaat much. She washed her hands and killed all the microbes.",
                 nextWidget: Empty())),
         definition: ""),
     Choice(
-        title: 'Forever Alone',
-        description: "I am happy enough on my own",
+        title: "Well... It may kill the bacteria",
+        description: "Well... It may kill the bacteria",
         img: "",
         endMessage: "",
-        nextWidget: GH32(
+        nextWidget: PO32(
             currChoice: Choice(
-                title: 'Forever Alone',
-                description: "I am happy enough on my own",
+                title: "Well... It may kill the bacteria",
+                description: "Well... It may kill the bacteria",
                 img: "",
                 definition: "",
                 endMessage:
-                    "So…John did not talk to his new classmates and thus he remained alone and sad.",
+                    "Those 30 seconds were tooo much for her to handle so she did not wash her hands. Then and there, she missed her chance to get rid of Polio.",
                 nextWidget: Empty())),
         definition: ""),
   ];
@@ -182,9 +183,9 @@ class GH3 extends StatelessWidget {
   }
 }
 
-class GH11 extends StatelessWidget {
+class PO11 extends StatelessWidget {
   final Choice currChoice;
-  GH11({required this.currChoice});
+  PO11({required this.currChoice});
 
   @override
   Widget build(BuildContext context) {
@@ -193,9 +194,9 @@ class GH11 extends StatelessWidget {
   }
 }
 
-class GH12 extends StatelessWidget {
+class PO12 extends StatelessWidget {
   final Choice currChoice;
-  GH12({required this.currChoice});
+  PO12({required this.currChoice});
 
   @override
   Widget build(BuildContext context) {
@@ -205,9 +206,9 @@ class GH12 extends StatelessWidget {
   }
 }
 
-class GH21 extends StatelessWidget {
+class PO21 extends StatelessWidget {
   final Choice currChoice;
-  GH21({required this.currChoice});
+  PO21({required this.currChoice});
 
   @override
   Widget build(BuildContext context) {
@@ -216,37 +217,37 @@ class GH21 extends StatelessWidget {
   }
 }
 
-class GH22 extends StatelessWidget {
+class PO22 extends StatelessWidget {
   final Choice currChoice;
-  GH22({required this.currChoice});
+  PO22({required this.currChoice});
 
   @override
   Widget build(BuildContext context) {
-    shouldPop[0] = true;
+    shouldPop[1] = true;
     return ChoicePage(
         currChoice: currChoice, choices: [], isEnd: true, isGood: false);
   }
 }
 
-class GH31 extends StatelessWidget {
+class PO31 extends StatelessWidget {
   final Choice currChoice;
-  GH31({required this.currChoice});
+  PO31({required this.currChoice});
 
   @override
   Widget build(BuildContext context) {
+    return ChoicePage(
+        currChoice: currChoice, choices: [], isEnd: true, isGood: false);
+  }
+}
+
+class PO32 extends StatelessWidget {
+  final Choice currChoice;
+  PO32({required this.currChoice});
+
+  @override
+  Widget build(BuildContext context) {
+    shouldPop[2] = true;
     return ChoicePage(
         currChoice: currChoice, choices: [], isEnd: true, isGood: true);
-  }
-}
-
-class GH32 extends StatelessWidget {
-  final Choice currChoice;
-  GH32({required this.currChoice});
-
-  @override
-  Widget build(BuildContext context) {
-    shouldPop[0] = true;
-    return ChoicePage(
-        currChoice: currChoice, choices: [], isEnd: true, isGood: false);
   }
 }
